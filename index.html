@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUIZZED</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <nav class="navbar">
+            <span>Quizzzeed</span>
+        </nav>
+    </header>
+
+    <section class="quiz-setup " id="setupp"> 
+        <div class="setup">
+            <p>Quiz Setup</p>
+        </div>
+
+        <form action="" method="post" class="form">
+
+            <label for="trivia_amount">Number of Questions:<br>
+                <select name="number" class="form-control" id="number">
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option value="40">40</option>
+                    <option value="50">50</option>
+                </select></label>
+
+            <label for="category">Select Category: <br>
+                <select name="category" class="form-control" id="category">
+                    <option value="any">Any Category</option>
+                    <option value="9" selected>General Knowledge</option>
+                    <option value="10">Entertainment: Books</option>
+                    <option value="11">Entertainment: Film</option>
+                    <option value="12">Entertainment: Music</option>
+                    <option value="14">Entertainment: Television</option>
+                    <option value="15">Entertainment: Video Games</option>
+                    <option value="16">Entertainment: Board Games</option>
+                    <option value="29">Entertainment: Comics</option>
+                    <option value="31">Entertainment: Japanese Anime &amp; Manga</option>
+                    <option value="32">Entertainment: Cartoon &amp; Animations</option>
+                    <option value="17">Science &amp; Nature</option>
+                    <option value="18">Science: Computers</option>
+                    <option value="21">Sports</option>
+                    <option value="22">Geography</option>
+                    <option value="23">History</option>
+                    <option value="25">Art</option>
+                    <option value="26">Celebrities</option>
+                    <option value="27">Animals</option>
+                    <option value="28">Vehicles</option>
+                </select></label>
+
+            <label for="difficulty">Select Difficulty: <br>
+                <select name="difficulty" class="form-control" id="difficulty">
+                    <option value="any">Any Difficulty</option>
+                    <option value="easy" selected>Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select></label>
+
+            <label for="type">Select Type: <br>
+                <select name="trivia_type" class="form-control" id="type">
+                    <option value="any">Any Type</option>
+                    <option value="multiple" selected>Multiple Choice</option>
+                    <option value="boolean">True / False</option>
+                </select></label>
+
+
+            <div class="flex">
+                <div class="btn" onclick="showlist()">Score Board</div>
+                <div class="btn" onclick="chalu()">Start Quiz</div>
+            </div>
+            
+        </form>
+    </section>
+
+    <section class="it-is-loader hidden" id="loader">
+        <div class="loader"></div>
+    </section>
+
+    <section class="quiz_area hidden" id="qarea">
+        <div class="Ques_list" id="questionlist">
+        </div>
+        <div class="ques_area">
+            <div class="details"><p>Timer: <span id="min">00</span>:<span id="sec">00</span></p> <div class="finish button">Finish</div></div>
+            <div class="question"><span id="qno"></span><p id="question"></p></div>
+            <div class="available_choices">
+                <div class="prev button">Prev</div>
+                <div class="answers" id="answers">
+                    <div class="answer_choice"><span class="ans_no" id="1">a</span><p class="choice ans_p" id="1"></p></div>
+                    <div class="answer_choice"><span class="ans_no" id="2">b</span><p class="choice ans_p" id="2"></p></div>
+                    <div class="answer_choice"><span class="ans_no" id="3">c</span><p class="choice ans_p" id="3"></p></div>
+                    <div class="answer_choice"><span class="ans_no" id="4">d</span><p class="choice ans_p" id="4"></p></div>
+                </div>
+                <div class="next button">Next</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="it-is-failed hidden" id="fail">
+        <div class="failed hidden" id="fail1">
+            <p>Failed to fetch Data.</p> 
+            <p>Please Reload</p>
+        </div>
+
+        <div class="failed hidden" id="fail2">
+            <p>The parameter you choosed are unavailable.</p>
+            <p>Please reload and try others</p>
+        </div>
+    </section>
+
+    <section class="it-is-score hidden" id="final">
+        <div class="in " id="inp">
+            <p>Your Score = <span id="yourscore">00</span></p>
+            <input type="text" class="inpt" placeholder="Your Name" id="u_name">
+            <button class="save" id="save" onclick="savegame()" disabled>SAVE</button>
+            <button class="scorelist" onclick="showlist()">Score List</button>
+        </div>
+    </section>
+
+    <div class="align hidden" id="output">
+        <div class="out" id="out">
+            <p class="hd">Score Board</p>
+        </div>
+
+        <button class="btn" onclick="home()">Go Home</button>
+
+    </div>
+
+    <div class="align hidden" id="width">
+        <div class="notallowed">
+            <p>Cant open in this device. <br>Please use a Laptop or PC</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
